@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'scaffold.views.home', name='home'),
+    url(r'^$', 'main.views.index', name='index'),
     # url(r'^blog/', include('blog.urls')),
     url(r'^_ah/', include('djangae.urls')),
 
