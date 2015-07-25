@@ -8,11 +8,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
-from djangae.settings_base import * #Set up some AppEngine specific stuff
+from djangae.settings_base import *  # NOQA
 from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -31,7 +32,7 @@ TEMPLATE_DEBUG = True
 # Application definition
 
 INSTALLED_APPS = (
-    'djangae', # Djangae needs to come before django apps in django 1.7 and above
+    'djangae',  # Djangae needs to come before django apps in django 1.7 and above
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +58,6 @@ MIDDLEWARE_CLASSES = (
     'session_csrf.CsrfMiddleware',
     'djangosecure.middleware.SecurityMiddleware',
 )
-
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.auth.context_processors.auth",
@@ -111,7 +111,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
 if DEBUG:
     CSP_STYLE_SRC = ("'self'", "'unsafe-inline'")
 
@@ -119,10 +118,10 @@ if DEBUG:
 CSP_DEFAULT_SRC = ("'self'", "*.gstatic.com")
 CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com", "*.gstatic.com")
 CSP_FONT_SRC = ("'self'", "themes.googleusercontent.com", "*.gstatic.com")
-CSP_FRAME_SRC = ("'self'", "www.google.com", "www.youtube.com", "accounts.google.com", "apis.google.com", "plus.google.com")
+CSP_FRAME_SRC = ("'self'", "www.google.com", "www.youtube.com",
+                 "accounts.google.com", "apis.google.com", "plus.google.com")
 CSP_SCRIPT_SRC = ("'self'", "*.googleanalytics.com", "*.google-analytics.com", "ajax.googleapis.com")
 CSP_IMG_SRC = ("'self'", "data:", "s.ytimg.com", "*.googleusercontent.com", "*.gstatic.com")
 CSP_CONNECT_SRC = ("'self'", "plus.google.com", "www.google-analytics.com")
 
-
-from djangae.contrib.gauth.settings import *
+from djangae.contrib.gauth.settings import *  # NOQA
