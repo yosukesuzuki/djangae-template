@@ -31,8 +31,12 @@ handlers:
 skip_files:
     - manage.py
     - README.md
+    - LICENSE.md
     - install_deps
     - requirements.txt
+    - rename_scaffold_app
+    - setup.cfg
+    - tox.ini
     - sitepackages/google_appengine*
     - \.storage.*
     - (.*)\.pyc
