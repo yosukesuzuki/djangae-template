@@ -6,3 +6,7 @@ dependencies:
   override:
     - ./install_deps
     - pip install tox
+
+test:
+  override:
+    - tox
