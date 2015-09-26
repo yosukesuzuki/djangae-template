@@ -28,6 +28,9 @@ handlers:
   script: main.wsgi.application
   secure: always
 
+builtins:
+- appstats: on
+
 skip_files:
     - manage.py
     - README.md
@@ -38,5 +41,7 @@ skip_files:
     - setup.cfg
     - tox.ini
     - sitepackages/google_appengine*
+    - sitepackages/setuptools*
     - \.storage.*
+    - \.tox.*
     - (.*)\.pyc
